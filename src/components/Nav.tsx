@@ -1,18 +1,17 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-import laptop from "../assets/kitty-laptop.png"
-import astronaut from "../assets/kitty-astronaut.png"
-import thinking from "../assets/kitty-thinking.png"
-import phone from "../assets/kitty-phone.png"
-import me from "../assets/me-small.jpg"
+import laptop from "../../public/kitty-laptop.png"
+import astronaut from "../../public/kitty-astronaut.png"
+import thinking from "../../public/kitty-thinking.png"
+import phone from "../../public/kitty-phone.png"
+import me from "../../public/me-small.jpg"
 
 const roundedIconClass = "w-24 h-24 rounded-full overflow-hidden"
 const visiblePosition = { opacity: 1, x: 0 }
 const invisibleLeft = { opacity: 0, x: 25 }
 const invisibleRight = { opacity: 0, x: -25 }
 const invisibleFarRight = { opacity: 0, x: -100 }
-const backgroundColour = "stone-400"
 
 const navMotion = {
     visible: {
@@ -39,15 +38,16 @@ const itemMotionDesktop = {
 interface NavLink {
     name: string
     imgsrc: string
+    alt: string
     href: string
     id: number
 }
 
 const navLinkData: NavLink[] = [
-    { name: "About Me", imgsrc: thinking.src, href: "/", id: 1 },
-    { name: "Experience", imgsrc: laptop.src, href: "/experience", id: 2 },
-    { name: "Education", imgsrc: astronaut.src, href: "/education", id: 3 },
-    { name: "Contact", imgsrc: phone.src, href: "/contact", id: 4 },
+    { name: "About Me", imgsrc: thinking.src, alt: "thinking kitty from freepix.com", href: "/", id: 1 },
+    { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "/experience", id: 2 },
+    { name: "Education", imgsrc: astronaut.src, alt: "astronaut kitty from freepix.com", href: "/education", id: 3 },
+    { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "/contact", id: 4 },
 ]
 
 interface NavLinksProps {
@@ -98,7 +98,7 @@ const Burger: React.FC<BurgerProps> = ({ toggled, setToggled }) => (
                 rotateZ: toggled ? 45 : 0,
                 y: toggled ? 8 : 0
             }}
-            className="block h-0.5 w-8 bg-black"
+            className="block h-0.5 w-8 bg-slate-300"
         />
 
         <motion.span
@@ -106,7 +106,7 @@ const Burger: React.FC<BurgerProps> = ({ toggled, setToggled }) => (
                 x: toggled ? 12 : 0,
                 width: toggled ? 0 : 32
             }}
-            className="block h-0.5 w-8 bg-black"
+            className="block h-0.5 w-8 bg-slate-300"
         />
         <motion.span
             animate={{
@@ -114,7 +114,7 @@ const Burger: React.FC<BurgerProps> = ({ toggled, setToggled }) => (
                 y: toggled ? -8 : 0,
                 width: 32,
             }}
-            className="block h-0.5 w-8 bg-black"
+            className="block h-0.5 w-8 bg-slate-300"
         />
     </motion.div>
 
@@ -124,23 +124,10 @@ export default function Nav() {
     const [toggled, setToggled] = useState(false)
 
     return (
-        <nav className="relative px-8 mb-32 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-700 text-slate-300">
-            <svg
-                className="absolute bottom-0 left-1/2 -translate-x-1/2"
-                width="80%"
-                height="4"
-                viewBox="0 0 1280 4"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M2 2L1278 2"
-                    stroke="#282828"
-                    strokeLinecap="round"
-                />
-            </svg>
+        <nav className="relative px-8 mb-16 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-700">
 
             <div className={roundedIconClass}>
-                <img src={me.src} alt="Me in Queenstown" />
+                <img src={me.src} alt="Ian in Queenstown" />
             </div>
 
             <h1 className="text-2xl font-bold">
