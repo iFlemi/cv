@@ -5,6 +5,7 @@ import Theodore from "../../public/Theodore.png"
 ---
 
 <div class="relative px-12 flex flex-col items-center justify-center">
+    <h1 class="text-md font-bold pb-6"> Still working on this, it will update periodically (07/02/24)</h1>
     <h1 class="text-2xl font-bold"> <span class="font-bold text-orange-300">Hello, I'm Ian.</span> I like to write code.</h1>
     <div class="relative">
 
@@ -56,11 +57,8 @@ import Theodore from "../../public/Theodore.png"
             path.setAttribute("d", `M0,0 V${textMain.offsetHeight-16} H${textMain.offsetWidth} v${textMain.offsetHeight/2}`)
         
         const pathLength = path.getTotalLength()
-          path.style.strokeDasharray = pathLength.toString()
-          path.style.strokeDashoffset = pathLength.toString()
-
-
-
+        path.style.strokeDasharray = pathLength.toString()
+        path.style.strokeDashoffset = pathLength.toString()
     }
     window.addEventListener("DOMContentLoaded", updatePath)
     window.addEventListener("resize", updatePath)
