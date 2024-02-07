@@ -1,9 +1,7 @@
 ---
-import FancyLine from "../../public/fancyline.svg?raw"
-import Chad from "../../public/Chad.jpg"
-import Theodore from "../../public/Theodore.jpg"
+import Chad from "../../public/TheoAndChad.jpg"
 ---
-<div class="relative px-12 flex flex-col items-center justify-center xl:flex-row xl:gap-36">
+<div id="about" class="relative px-12 flex flex-col items-center justify-center xl:flex-row xl:gap-36">
     <div> 
         <h1 class="text-2xl font-bold"> <span class="font-bold text-orange-500">Hello, I'm Ian.</span> I like to write code.</h1>
         <div class="relative">
@@ -23,8 +21,9 @@ import Theodore from "../../public/Theodore.jpg"
             </svg>
 
             <p id="anim-p" class="p-6 text-xl xl:w-auto">
-                I especially like to write code I can read again, or that someone else can read. This is sometimes called "<span class="font-bold text-orange-300">clean code</span>", and it means something different to every developer.<br/><br/>To me, it means <span class="font-bold text-orange-300">maintenance</span> above all else. Code that can be read (preferably once) and understood, both by me when I inevitably forget about it, and as a bonus anyone else who happens to read it.<br/><br/>Code that takes more brain power to understand is harder to maintain. Code that doesn't test itself is harder to maintain. Tests that attempt too much at once are harder to understand, and harder to maintain.
-                <br/><br/>            </p>
+                I especially like to write code I can read again, or that someone else can read. This is an interpretation of "<span class="font-bold text-orange-300">clean code</span>", and it means something different to every developer.<br/><br/>To me, it means <span class="font-bold text-orange-300">maintenance</span> above all else. Code that can be read (preferably once) and understood, both by me when I inevitably forget about it, and as a bonus anyone else who happens to read it.<br/><br/>Code that takes more brain power to understand is harder to maintain. Code that doesn't test itself is harder to maintain. Tests that attempt too much at once are harder to understand, and harder to maintain.
+                <br/><br/>
+            </p>
         </div>
         <div class="text-xl pt-6 pr-6">
             <p>Aside from writing code for work, I've also been writing an RPG game in Godot, am an avid practitioner of Tai Chi, and spend entirely too much time with my cats.
@@ -32,8 +31,8 @@ import Theodore from "../../public/Theodore.jpg"
         </div>
     </div>
     <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
-        <img src={Chad.src} class="rounded-2xl" alt="Chad the cat" />
-        <span class="text-sm">My cat Chad.</span>
+        <img src={Chad.src} class="rounded-2xl" alt="My cats Theodore and Chad" />
+        <span class="text-sm">Theodore (back) and Chad (front)</span>
     </div>
 </div>
 
@@ -47,9 +46,6 @@ import Theodore from "../../public/Theodore.jpg"
         to {
          stroke-dashoffset: 0;
         }
-    }
-    img {
-         object-fit: cover;
     }
 </style>
 

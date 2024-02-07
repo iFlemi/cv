@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-import laptop from "../../public/kitty-laptop.png"
-import astronaut from "../../public/kitty-astronaut.png"
-import thinking from "../../public/kitty-thinking.png"
-import phone from "../../public/kitty-phone.png"
-import me from "../../public/me-small.jpg"
+import laptop from "../assets/kitty-laptop.png"
+import astronaut from "../assets/kitty-astronaut.png"
+import thinking from "../assets/kitty-thinking.png"
+import phone from "../assets/kitty-phone.png"
+import me from "../assets/me-small.jpg"
 
 const roundedIconClass = "w-24 h-24 rounded-full overflow-hidden"
 const visiblePosition = { opacity: 1, x: 0 }
@@ -45,19 +45,23 @@ interface NavLink {
 
 const navLinkData: NavLink[] = [
     { name: "About Me", imgsrc: thinking.src, alt: "thinking kitty from freepix.com", href: "/", id: 1 },
-    { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "/experience", id: 2 },
-    { name: "Education", imgsrc: astronaut.src, alt: "astronaut kitty from freepix.com", href: "/education", id: 3 },
-    { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "/contact", id: 4 },
+    { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "#experience", id: 2 },
+    { name: "Education", imgsrc: astronaut.src, alt: "astronaut kitty from freepix.com", href: "#education", id: 3 },
+    { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "#contact", id: 4 },
 ]
 
 interface NavLinksProps {
-    isMobile: boolean;
-    className: string;
+    isMobile: boolean
+    className: string
+    toggled: boolean
+    setToggled: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const NavLinks: React.FC<NavLinksProps> = ({
     isMobile,
     className,
+    toggled,
+    setToggled
 }) => (
     <div className={className}>
         {navLinkData.map(({ name, imgsrc, href, id }) => (
@@ -68,6 +72,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
                 <a
                     href={href}
                     className="flex items-center justify-between"
+                    onClick={() => setToggled(!toggled)}
                 >
                     {isMobile && (<img
                         className={roundedIconClass}
@@ -81,8 +86,8 @@ const NavLinks: React.FC<NavLinksProps> = ({
 
 
 interface BurgerProps {
-    toggled: boolean;
-    setToggled: React.Dispatch<React.SetStateAction<boolean>>;
+    toggled: boolean
+    setToggled: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Burger: React.FC<BurgerProps> = ({ toggled, setToggled }) => (
@@ -141,7 +146,7 @@ export default function Nav() {
                     initial="hidden"
                     className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-12 text-2xl font-bold bg-slate-700"
                 >
-                    <NavLinks className="flex flex-col gap-24" isMobile={true} />
+                    <NavLinks className="flex flex-col gap-24" isMobile={true} toggled={toggled} setToggled={setToggled} />
                 </motion.div>
             )}
 
@@ -151,7 +156,7 @@ export default function Nav() {
                 transition={{ delay: 0.15 }}
                 className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg font-bold"
             >
-                <NavLinks className="flex gap-12" isMobile={false} />
+                <NavLinks className="flex gap-12" isMobile={false} toggled={toggled} setToggled={setToggled} />
             </motion.div>
 
             <Burger
