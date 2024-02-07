@@ -32,7 +32,7 @@ import Theodore from "../../public/Theodore.jpg"
         </div>
     </div>
     <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
-        <img src={Chad.src} class="h-full rounded-2xl" alt="Chad the cat" />
+        <img src={Chad.src} class="rounded-2xl" alt="Chad the cat" />
         <span class="text-sm">My cat Chad.</span>
     </div>
 </div>
@@ -47,6 +47,9 @@ import Theodore from "../../public/Theodore.jpg"
         to {
          stroke-dashoffset: 0;
         }
+    }
+    img {
+         object-fit: cover;
     }
 </style>
 

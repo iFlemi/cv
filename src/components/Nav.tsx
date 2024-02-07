@@ -139,7 +139,7 @@ export default function Nav() {
                     variants={navMotion}
                     animate="visible"
                     initial="hidden"
-                    className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-24 text-2xl font-bold bg-slate-700"
+                    className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-12 text-2xl font-bold bg-slate-700"
                 >
                     <NavLinks className="flex flex-col gap-24" isMobile={true} />
                 </motion.div>
