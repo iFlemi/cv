@@ -10,7 +10,6 @@ import me from "../assets/me-small.jpg"
 const roundedIconClass = "w-24 h-24 rounded-full overflow-hidden"
 const visiblePosition = { opacity: 1, x: 0 }
 const invisibleLeft = { opacity: 0, x: 25 }
-const invisibleRight = { opacity: 0, x: -25 }
 const invisibleFarRight = { opacity: 0, x: -100 }
 
 const navMotion = {
@@ -44,9 +43,7 @@ interface NavLink {
 }
 
 const navLinkData: NavLink[] = [
-    { name: "About Me", imgsrc: thinking.src, alt: "thinking kitty from freepix.com", href: "/", id: 1 },
     { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "#experience", id: 2 },
-    { name: "Education", imgsrc: astronaut.src, alt: "astronaut kitty from freepix.com", href: "#education", id: 3 },
     { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "#contact", id: 4 },
 ]
 
@@ -129,22 +126,24 @@ export default function Nav() {
     const [toggled, setToggled] = useState(false)
 
     return (
-        <nav className="relative px-8 mb-4 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-700">
+        <nav className="relative px-8 mb-4 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-950">
 
-            <div className={roundedIconClass}>
-                <img src={me.src} alt="Ian in Queenstown" />
+            <div className="flex items-center gap-6">
+                <a className={roundedIconClass} href="/">
+                    <img src={me.src} alt="Ian in Queenstown" />
+                </a>
+
+                <h1 className="text-2xl font-bold">
+                    <a href="/">Ian Fleming</a>
+                </h1>
             </div>
-
-            <h1 className="text-2xl font-bold">
-                <a href="/">Ian Fleming</a>
-            </h1>
 
             {toggled && (
                 <motion.div
                     variants={navMotion}
                     animate="visible"
                     initial="hidden"
-                    className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-12 text-2xl font-bold bg-slate-700"
+                    className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-12 text-2xl font-bold bg-slate-950"
                 >
                     <NavLinks className="flex flex-col gap-24" isMobile={true} toggled={toggled} setToggled={setToggled} />
                 </motion.div>
@@ -156,7 +155,7 @@ export default function Nav() {
                 transition={{ delay: 0.15 }}
                 className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg font-bold"
             >
-                <NavLinks className="flex gap-12" isMobile={false} toggled={toggled} setToggled={setToggled} />
+                <NavLinks className="flex gap-12" isMobile={false} toggled={toggled} setToggled={() => { }} />
             </motion.div>
 
             <Burger
