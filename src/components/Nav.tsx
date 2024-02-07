@@ -124,7 +124,7 @@ export default function Nav() {
     const [toggled, setToggled] = useState(false)
 
     return (
-        <nav className="relative px-8 mb-16 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-700">
+        <nav className="relative px-8 mb-4 flex justify-between items-center pt-12 pb-6 font-medium md:px-16 lg:px-32 bg-slate-700">
 
             <div className={roundedIconClass}>
                 <img src={me.src} alt="Ian in Queenstown" />
