@@ -58,7 +58,8 @@ function getRandomOrange() {
 function animatePath(svgId: string) {
     const path = document.querySelector(`#path-${svgId}`) as SVGPathElement
 
-    const bottomThird = window.innerHeight - window.innerHeight / 3
+    const bottomThird = window.innerHeight - window.innerHeight / (Math.floor(Math.random() * 3) + 2)
+    console.log(bottomThird)
     const screenWidth = window.innerWidth
     let d = `M0,${bottomThird}`
 
@@ -67,7 +68,7 @@ function animatePath(svgId: string) {
     const minYStep = window.innerHeight / 10
     const maxYStep = window.innerHeight / 3
 
-    for (let i = 0; i < moves; i++) {
+    for (let i = 0; i < moves; ++i) {
         let newX = (i + 1) * stepX
         let newY = Math.min(maxYStep, Math.max(minYStep, Math.random() * (maxYStep - minYStep) + minYStep))
         d += ` h${newX}`
