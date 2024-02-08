@@ -85,5 +85,5 @@ function animatePath(svgId: string) {
     setTimeout(() => {
         path.style.transition = `stroke-dashoffset ${5 - transitionTime}s ease-out`
         path.style.strokeDashoffset = '0'
-    }, 1000)
+    }, transitionTime * 1000)
 }
