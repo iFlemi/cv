@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/main.astro"
+import TheoAndChad from "../../public/TheoAndChad.jpg"
+---
+
+<MainLayout>
+    <div id="about" class="drawable relative px-12 flex flex-col items-center justify-center xl:flex-row xl:justify-start xl:pl-0">
+        <div class="xl:ml-24">
+            <h1>Code Style</h1>
+
+            <h1>Hobbies</h1>
+            <div class="text-2xl pt-6 pr-6">
+                <p>Aside from writing code for work, I've also been writing an <a class="text-orange-300 cursor-pointer" href="https://github.com/iFlemi/ACE">RPG game in Godot</a>, am an <a class="text-orange-300 cursor-pointer" href="https://www.youtube.com/watch?v=5siMwxWpPik">avid practitioner of Tai Chi</a>, and spend entirely too much time with my cats.
+                </p>
+            </div>
+
+
+            <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
+                <img src={TheoAndChad.src} class="rounded-2xl" alt="My cats Theodore and Chad" />
+                <span class="text-sm">Theodore (back) and Chad (front)</span>
+            </div>
+        </div>
+    </div>
+</MainLayout>

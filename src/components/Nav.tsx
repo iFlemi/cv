@@ -43,7 +43,7 @@ interface NavLink {
 }
 
 const navLinkData: NavLink[] = [
-    { name: "About Me", imgsrc: thinking.src, alt: "kitty thinking from freepix.com", href: "/", id: 1 },
+    { name: "About Me", imgsrc: thinking.src, alt: "kitty thinking from freepix.com", href: "/about", id: 1 },
     { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "/experience", id: 2 },
     { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "/contact", id: 4 },
 ]

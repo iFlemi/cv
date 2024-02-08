@@ -5,44 +5,66 @@ export const DrawRandomLines = () => {
     }
 }
 
+
+type SVGAttributePair = [string, string];
+
+const createSVGElement = (tag: string, attributePairs: SVGAttributePair[]): SVGElement => {
+    const element: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    attributePairs.map(([key, value]) => element.setAttribute(key, value));
+    return element;
+}
+
 function createSVGWithGradient() {
-    const svgId = 'svg-' + Math.floor(Math.random() * 100).toFixed(0)
+    const svgId = 'svg-' + Math.floor(Math.random() * 100).toFixed(0);
 
-    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    svgElement.setAttribute('id', svgId)
-    svgElement.setAttribute('class', 'z-0 absolute h-full w-full overflow-visible')
-    const linearGradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient')
-    linearGradient.setAttribute('id', 'gradient-' + svgId)
-    linearGradient.setAttribute('x1', '0%')
-    linearGradient.setAttribute('y1', '0%')
-    linearGradient.setAttribute('x2', '100%')
-    linearGradient.setAttribute('y2', '0%')
+    const svgElementAttributes: SVGAttributePair[] = [
+        ['id', svgId],
+        ['class', 'z-0 absolute h-full w-full overflow-visible']
+    ];
 
-    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop')
-    stop1.setAttribute('offset', '0%')
-    stop1.setAttribute('stop-color', getRandomOrange())
-    stop1.setAttribute('stop-opacity', '1')
-    linearGradient.appendChild(stop1)
+    const svgElement = createSVGElement('svg', svgElementAttributes);
 
-    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop')
-    stop2.setAttribute('offset', '100%')
-    stop2.setAttribute('stop-color', getRandomOrange())
-    stop2.setAttribute('stop-opacity', '1')
-    linearGradient.appendChild(stop2)
+    const linearGradientAttributes: SVGAttributePair[] = [
+        ['id', `gradient-${svgId}`],
+        ['x1', '0%'],
+        ['y1', '0%'],
+        ['x2', '100%'],
+        ['y2', '0%']
+    ];
+    const linearGradient = createSVGElement('linearGradient', linearGradientAttributes);
 
-    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-    pathElement.setAttribute('id', 'path-' + svgId)
-    pathElement.setAttribute('fill', 'none')
-    pathElement.setAttribute('stroke', 'url(#gradient-' + svgId + ')')
-    pathElement.setAttribute('stroke-width', '4')
+    const stopsData: { offset: string; color: string }[] = [
+        { offset: '0%', color: getRandomOrange() },
+        { offset: '100%', color: getRandomOrange() }
+    ];
 
-    svgElement.appendChild(linearGradient)
-    svgElement.appendChild(pathElement)
-    const div = document.querySelector(".drawable")
+    const stops = stopsData.map(stopData => {
+        return createSVGElement('stop', [
+            ['offset', stopData.offset],
+            ['stop-color', stopData.color],
+            ['stop-opacity', '1']
+        ]);
+    });
 
-    div!.appendChild(svgElement)
+    stops.forEach(stop => linearGradient.appendChild(stop));
 
-    return svgId
+    const pathElementAttributes: SVGAttributePair[] = [
+        ['id', `path-${svgId}`],
+        ['fill', 'none'],
+        ['stroke', 'url(#gradient-' + svgId + ')'],
+        ['stroke-width', '4']
+    ];
+    const pathElement = createSVGElement('path', pathElementAttributes);
+
+    svgElement.appendChild(linearGradient);
+    svgElement.appendChild(pathElement);
+
+    const div = document.querySelector(".drawable");
+
+    if (div)
+        div.appendChild(svgElement);
+
+    return svgId;
 }
 
 function getRandomOrange() {
