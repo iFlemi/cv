@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import DrawLineButton from "./DrawLineButton"
 
 import laptop from "../assets/kitty-laptop.png"
-import astronaut from "../assets/kitty-astronaut.png"
 import thinking from "../assets/kitty-thinking.png"
 import phone from "../assets/kitty-phone.png"
 import me from "../assets/me-small.jpg"
@@ -43,8 +43,9 @@ interface NavLink {
 }
 
 const navLinkData: NavLink[] = [
-    { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "#experience", id: 2 },
-    { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "#contact", id: 4 },
+    { name: "About Me", imgsrc: thinking.src, alt: "kitty thinking from freepix.com", href: "/", id: 1 },
+    { name: "Experience", imgsrc: laptop.src, alt: "kitty working on laptop from freepix.com", href: "/experience", id: 2 },
+    { name: "Contact", imgsrc: phone.src, alt: "kitty holding a phone from freepix.com", href: "/contact", id: 4 },
 ]
 
 interface NavLinksProps {
@@ -156,6 +157,7 @@ export default function Nav() {
                 className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg font-bold"
             >
                 <NavLinks className="flex gap-12" isMobile={false} toggled={toggled} setToggled={() => { }} />
+                <DrawLineButton />
             </motion.div>
 
             <Burger

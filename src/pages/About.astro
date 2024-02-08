@@ -1,66 +1,16 @@
 ---
 import Chad from "../../public/TheoAndChad.jpg"
 ---
-<div id="about" class="relative px-12 flex flex-col items-center justify-center xl:flex-row xl:gap-36">
-    <div> 
-        <h1 class="text-5xl font-bold"> <span class="font-bold text-orange-500">Hello, I'm Ian.</span><br/>I like to write code.</h1>
-        <div class="relative">
 
-            <svg class="absolute h-full w-full overflow-visible pt-6">
-                <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: "#EA580C", stopOpacity: 1 }}/>
-                    <stop offset="100%" style={{ stopColor: "#FDBA74", stopOpacity: 1 }}/>
-                  </linearGradient>
-                </defs>
-                <path
-                  id="border-path"
-                  fill="none"
-                  stroke="url(#gradient)"
-                  stroke-width="4"></path>
-            </svg>
+<div class="text-xl pt-6 pr-6">
+    <p>Aside from writing code for work, I've also been writing an RPG game in Godot, am an avid practitioner of Tai Chi, and spend entirely too much time with my cats.
+    </p>
+</div>
 
-            <p id="anim-p" class="p-6 text-xl xl:w-auto">
-                I especially like to write code I can read again, or that someone else can read. This is an interpretation of "clean code", and it means something different to every developer.<br/><br/>To me, it means maintenance above all else. Code that can be read (preferably once) and understood, both by me when I inevitably forget about it, and as a bonus anyone else who happens to read it.<br/><br/>Code that takes more brain power to understand is harder to maintain. Code that doesn't test itself is harder to maintain. Tests that attempt too much at once are harder to understand, and harder to maintain.
-                <br/><br/>
-            </p>
-        </div>
-        <div class="text-xl pt-6 pr-6">
-            <p>Aside from writing code for work, I've also been writing an RPG game in Godot, am an avid practitioner of Tai Chi, and spend entirely too much time with my cats.
-            </p>
-        </div>
-    </div>
-    <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
-        <img src={Chad.src} class="rounded-2xl" alt="My cats Theodore and Chad" />
-        <span class="text-sm">Theodore (back) and Chad (front)</span>
-    </div>
+
+<div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
+    <img src={Chad.src} class="rounded-2xl" alt="My cats Theodore and Chad" />
+    <span class="text-sm">Theodore (back) and Chad (front)</span>
 </div>
 
 <div class="my-12 mx-12 h-1 w-full-24 bg-orange-300 rounded-full"/>
-
-<style>
-    #border-path {
-        animation: draw 1s forwards 1s ease-out;
-    }
-    @keyframes draw {
-        to {
-         stroke-dashoffset: 0;
-        }
-    }
-</style>
-
-<script>
-    function updatePath() {
-        const textMain = document.querySelector("#anim-p") as HTMLElement 
-        const path = document.querySelector("#border-path") as SVGPathElement
-
-        if (textMain && path)
-            path.setAttribute("d", `M0,0 V${textMain.offsetHeight-16} H${textMain.offsetWidth} v${textMain.offsetHeight}`)
-        
-        const pathLength = path.getTotalLength()
-        path.style.strokeDasharray = pathLength.toString()
-        path.style.strokeDashoffset = pathLength.toString()
-    }
-    window.addEventListener("DOMContentLoaded", updatePath)
-    window.addEventListener("resize", updatePath)
-</script>
