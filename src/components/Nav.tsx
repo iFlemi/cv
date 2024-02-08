@@ -134,7 +134,7 @@ export default function Nav() {
                     <img src={me.src} alt="Ian in Queenstown" />
                 </a>
 
-                <h1 className="text-2xl font-bold">
+                <h1 className="text-2xl">
                     <a href="/">Ian Fleming</a>
                 </h1>
             </div>
@@ -154,7 +154,7 @@ export default function Nav() {
                 animate={visiblePosition}
                 initial={invisibleLeft}
                 transition={{ delay: 0.15 }}
-                className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg font-bold"
+                className="hidden xl:flex xl:items-center xl:justify-center xl:gap-12 xl:text-lg "
             >
                 <NavLinks className="flex gap-12" isMobile={false} toggled={toggled} setToggled={() => { }} />
                 <DrawLineButton />
