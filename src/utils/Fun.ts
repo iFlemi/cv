@@ -1,28 +1,26 @@
 export const DrawRandomLines = () => {
-    for (var i = 0; i < 5; ++i) {
-        const svgId = createSVGWithGradient()
-        animatePath(svgId)
-    }
+    for (var i = 0; i < 5; ++i)
+        createSVGWithGradient()
 }
 
 
-type SVGAttributePair = [string, string];
+type SVGAttributePair = [string, string]
 
 const createSVGElement = (tag: string, attributePairs: SVGAttributePair[]): SVGElement => {
-    const element: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', tag);
-    attributePairs.map(([key, value]) => element.setAttribute(key, value));
-    return element;
+    const element: SVGElement = document.createElementNS('http://www.w3.org/2000/svg', tag)
+    attributePairs.map(([key, value]) => element.setAttribute(key, value))
+    return element
 }
 
 function createSVGWithGradient() {
-    const svgId = 'svg-' + Math.floor(Math.random() * 100).toFixed(0);
+    const svgId = 'svg-' + Math.floor(Math.random() * 100).toFixed(0)
 
     const svgElementAttributes: SVGAttributePair[] = [
         ['id', svgId],
         ['class', 'z-0 absolute h-full w-full overflow-visible']
-    ];
+    ]
 
-    const svgElement = createSVGElement('svg', svgElementAttributes);
+    const svgElement = createSVGElement('svg', svgElementAttributes)
 
     const linearGradientAttributes: SVGAttributePair[] = [
         ['id', `gradient-${svgId}`],
@@ -30,41 +28,41 @@ function createSVGWithGradient() {
         ['y1', '0%'],
         ['x2', '100%'],
         ['y2', '0%']
-    ];
-    const linearGradient = createSVGElement('linearGradient', linearGradientAttributes);
+    ]
+    const linearGradient = createSVGElement('linearGradient', linearGradientAttributes)
 
     const stopsData: { offset: string; color: string }[] = [
         { offset: '0%', color: getRandomOrange() },
         { offset: '100%', color: getRandomOrange() }
-    ];
+    ]
 
     const stops = stopsData.map(stopData => {
         return createSVGElement('stop', [
             ['offset', stopData.offset],
             ['stop-color', stopData.color],
             ['stop-opacity', '1']
-        ]);
-    });
+        ])
+    })
 
-    stops.forEach(stop => linearGradient.appendChild(stop));
+    stops.forEach(stop => linearGradient.appendChild(stop))
 
     const pathElementAttributes: SVGAttributePair[] = [
         ['id', `path-${svgId}`],
         ['fill', 'none'],
         ['stroke', 'url(#gradient-' + svgId + ')'],
         ['stroke-width', '4']
-    ];
-    const pathElement = createSVGElement('path', pathElementAttributes);
+    ]
+    const pathElement = createSVGElement('path', pathElementAttributes)
 
-    svgElement.appendChild(linearGradient);
-    svgElement.appendChild(pathElement);
+    svgElement.appendChild(linearGradient)
+    svgElement.appendChild(pathElement)
 
-    const div = document.querySelector(".drawable");
+    const div = document.querySelector(".drawable")
 
     if (div)
-        div.appendChild(svgElement);
+        div.appendChild(svgElement)
 
-    return svgId;
+    animatePath(svgId)
 }
 
 function getRandomOrange() {
@@ -85,7 +83,7 @@ function animatePath(svgId: string) {
     const screenWidth = window.innerWidth
     let d = `M0,${bottomThird}`
 
-    const moves = Math.floor(Math.random() * 8) + 3; // Random number of moves between 3 and 10
+    const moves = Math.floor(Math.random() * 8) + 3
     const stepX = screenWidth / moves
     const minYStep = window.innerHeight / 10
     const maxYStep = window.innerHeight / 3
@@ -105,7 +103,7 @@ function animatePath(svgId: string) {
 
     const transitionTime = (Math.random() * (1.5 - 0.5) + 0.5)
     setTimeout(() => {
-        path.style.transition = `stroke-dashoffset ${5 - transitionTime}s ease-out`
+        path.style.transition = `stroke-dashoffset ${10 - transitionTime}s ease-out`
         path.style.strokeDashoffset = '0'
     }, transitionTime * 1000)
 }

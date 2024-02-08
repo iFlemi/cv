@@ -6,19 +6,32 @@ import TheoAndChad from "../../public/TheoAndChad.jpg"
 <MainLayout>
     <div id="about" class="drawable relative px-12 flex flex-col items-center justify-center xl:flex-row xl:justify-start xl:pl-0">
         <div class="xl:ml-24">
-            <h1>Code Style</h1>
+            <div class="xl:w-3/4">
+                <h1 class="text-5xl xl:text-7xl text-orange-400">Code Style</h1>
+                <div class="relative py-6">
+                    <p class="text-2xl">
+                        To me clean code means maintenance above all else. Code that can be read (preferably once) and understood, both by me when I inevitably forget about it, and as a bonus anyone else who happens to read it.
+                        <br/><br/>
+                        Robust testing is the key to scaling code. Tests must be first-class citizens in the code base. They cannot be an afterthought, they must be afforded the same level of detail as the code itself. Keeping them small is the key to keeping them maintainable.
+                        <br/><br/>
+                        I believe in expressions over statements. Expressions are inherently closed systems, they can't be modified without being forced to think about the reasons for doing so.
+                        <br/><br/>
+                        I am very interested in learning more about functional programming, and continuously adapting to master this.
+                    </p>
+                </div>
 
-            <h1>Hobbies</h1>
-            <div class="text-2xl pt-6 pr-6">
-                <p>Aside from writing code for work, I've also been writing an <a class="text-orange-300 cursor-pointer" href="https://github.com/iFlemi/ACE">RPG game in Godot</a>, am an <a class="text-orange-300 cursor-pointer" href="https://www.youtube.com/watch?v=5siMwxWpPik">avid practitioner of Tai Chi</a>, and spend entirely too much time with my cats.
-                </p>
+                <h1 class="text-5xl xl:text-7xl text-orange-400">Hobbies</h1>
+                <div class="relative py-6">
+                    <p class="text-2xl">
+                        Aside from writing code for work, I've also been writing an <a class="text-orange-300 cursor-pointer" href="https://github.com/iFlemi/ACE">RPG game in Godot</a>, enjoy writing in general, am an <a class="text-orange-300 cursor-pointer" href="https://www.youtube.com/watch?v=5siMwxWpPik">avid practitioner of Tai Chi</a>, and spend entirely too much time with my cats.
+                    </p>
+                </div>
             </div>
+        </div>
 
-
-            <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-6">
-                <img src={TheoAndChad.src} class="rounded-2xl" alt="My cats Theodore and Chad" />
-                <span class="text-sm">Theodore (back) and Chad (front)</span>
-            </div>
+        <div class="relative text-center pl-6 pr-12 pt-6 xl:pt-0">
+            <img src={TheoAndChad.src} class="rounded-2xl xl:mr-24" alt="My cats Theodore and Chad" />
+            <span class="text-sm">Theodore (back) and Chad (front)</span>
         </div>
     </div>
 </MainLayout>
