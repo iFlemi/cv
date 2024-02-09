@@ -17,8 +17,8 @@ const ExperienceRows: React.FC<ExperienceEntryProps> = ({ cvExperience }) => {
     return (
         <div className="">
             {withHeader.map((experience, index) => (
-                <div key={index} className={`grid grid-cols-5 xl:grid-cols-10 gap-8 p-4 
-                    ${index === 0 ? "text-2xl text-orange-400 font-bold" : "text-xl"}
+                <div key={index} className={`grid grid-cols-1 xl:grid-cols-10 gap-8 p-4 
+                    ${index === 0 ? "hidden xl:visible text-2xl text-orange-400 font-bold" : "text-xl"}
                     ${index % 2 === 0 ? "bg-slate-950" : "bg-slate-900"}
                 `}>
                     <div className="font-bold">{experience.company}</div>
