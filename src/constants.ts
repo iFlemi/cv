@@ -79,7 +79,7 @@ export const cvExperience: experienceDatum[] = [
         achievements: [
             "Lead design of custom software from scratch, creating/adapting specifications with clients.",
             "Consulted on project costing, back-end services, front-end design & hosting requirements.",
-            "Saved ~70% of a client's monthly AWS bill (~$5000 ? ~$1500) through AWS service restructure.",
+            "Saved ~70% of a client's monthly AWS bill (~$5000 to ~$1500) through AWS service restructure.",
             "Autonomous self-management from implementation to finished product on projects.",
             "Rebuilt GPS tracking system from device byte level, TCP server, web interface to reporting system in .NET, JS/HTML/CSS using SQS and DynamoDB. Worked TCP level load balancing into the environment to optimise complexity/costs and increase scalability.",
             "Identified and fixed SQL injection vulnerabilities in existing code base.",

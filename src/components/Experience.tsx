@@ -17,16 +17,15 @@ const ExperienceRows: React.FC<ExperienceEntryProps> = ({ cvExperience }) => {
     return (
         <div className="">
             {withHeader.map((experience, index) => (
-                <div key={index} className={`grid grid-cols-11 gap-4 p-4 
+                <div key={index} className={`grid grid-cols-5 xl:grid-cols-10 gap-8 p-4 
                     ${index === 0 ? "text-2xl text-orange-400 font-bold" : "text-xl"}
                     ${index % 2 === 0 ? "bg-slate-950" : "bg-slate-900"}
                 `}>
                     <div className="font-bold">{experience.company}</div>
                     <div>{experience.jobTitle}</div>
-                    <div>{experience.location}</div>
                     <div>{experience.tenure}</div>
-                    <div className="col-span-2 italic">{experience.skills.join(', ')}</div>
-                    <div className="col-span-5">
+                    <div className="xl:col-span-2 italic">{experience.skills.join(', ')}</div>
+                    <div className="xl:col-span-5">
                         <ul>
                             {experience.achievements.map((achievement, idx) => (
                                 <li className="pb-2" key={idx}>{`${index === 0 ? "" : "- "}${achievement}`}</li>
