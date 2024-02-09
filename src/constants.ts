@@ -1,6 +1,6 @@
 export interface experienceDatum {
     company: string
-    companyBlurb: string
+    jobTitle: string
     location: string
     tenure: string
     skills: string[]
@@ -10,7 +10,7 @@ export interface experienceDatum {
 export const cvExperience: experienceDatum[] = [
     {
         company: "Kernel Wealth",
-        companyBlurb: "Software Engineer",
+        jobTitle: "Software Engineer",
         location: "Auckland",
         tenure: "April 2023 - Present",
         skills: ["C#", "F#", "PostgreSQL", "AWS: Lambda", "CodePipeline", "DynamoDB", "Git", "Aurora", "Cognito", "CloudFormation", "WAF", "SNS", "SQS", "EventBridge"],
@@ -25,16 +25,16 @@ export const cvExperience: experienceDatum[] = [
     },
     {
         company: "Visa Inc.",
-        companyBlurb: "Senior Developer (Spend Clarity for Enterprise)",
+        jobTitle: "Senior Developer",
         location: "Auckland",
-        tenure: "Aug 2021 - Jan 2023",
+        tenure: "August 2021 - January 2023",
         skills: ["JS", "React", "Github Actions", "Microservices", "MSSQL", "C#", "CouchDB"],
         achievements: [
             "Part of a team of 4 devs converting old Angular frontend to a new React one to a hard deadline.",
-            "Implemented, trained-on and enforced unit testing, taking the project from 0 - 50% test coverage in 4 months.",
+            "Implemented, trained-on and enforced unit testing, taking the project from 0 to 50% test coverage in 4 months.",
             "Lead initiative to standardise code-quality across teams.",
             "Decoupled microservices from each other and the ageing monolith.",
-            "Culled use of hard-to-maintain patterns (Redux/C# dynamic/JObject types) in new projects.",
+            "Removed use of hard-to-maintain patterns (Redux/C# dynamic/JObject types) in new projects.",
             "Migrated inefficient TeamCity build pipeline to GitHub actions as a step towards CI/CD.",
             "Assisted on new microservice architecture decisions.",
             "2nd highest score in division (of around 150 devs) for the annual code security assessment."
@@ -42,7 +42,7 @@ export const cvExperience: experienceDatum[] = [
     },
     {
         company: "Coretex",
-        companyBlurb: "Software Engineer (Construction Vehicles)",
+        jobTitle: "Software Engineer",
         location: "Auckland",
         tenure: "July 2020 - March 2021",
         skills: ["C#", "JS", "ASP MVC", "MSSQL", "Git", "Azure Cloud", "jQuery", "React", "XSLT", "Azure DevOps CI/CD", "Docker"],
@@ -57,7 +57,7 @@ export const cvExperience: experienceDatum[] = [
     },
     {
         company: "Starshipit",
-        companyBlurb: "Developer (Courier integrations)",
+        jobTitle: "Developer",
         location: "Auckland",
         tenure: "March 2019 - October 2019",
         skills: ["C#", ".NET Core", "ASP MVC", "SQL", "HTML5/CSS", "Bootstrap", "Windows Forms", "Azure Cloud", "Swagger", "iText"],
@@ -72,7 +72,7 @@ export const cvExperience: experienceDatum[] = [
     },
     {
         company: "Heron Technology",
-        companyBlurb: "Developer",
+        jobTitle: "Developer",
         location: "Auckland",
         tenure: "November 2015 - March 2019",
         skills: ["C#", ".NET Core", "ASP MVC", "SQL", "JavaScript", "Node.js", "JQuery", "HTML5/CSS", "Bootstrap 3/4", "AWS (AppStream, DynamoDB, VPC, API Gateway, EC2, EMR, SQS, Lambda, Alexa, Cloudwatch)", "Google Assistant", "SignalR", "Windows Forms", "SSL VPN", "Windows Server", "DNS", "Git"],
@@ -88,7 +88,7 @@ export const cvExperience: experienceDatum[] = [
     },
     {
         company: "Out There Business Solutions",
-        companyBlurb: "Android Developer",
+        jobTitle: "Android Developer",
         location: "Auckland",
         tenure: "April 2015 - November 2015",
         skills: ["Java", "Android", "MongoDB", "Node.js", "HTML", "CSS", "Git"],

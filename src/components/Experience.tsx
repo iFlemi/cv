@@ -1,16 +1,45 @@
 import { experienceDatum, cvExperience } from "../constants"
 
+interface ExperienceEntryProps {
+    cvExperience: experienceDatum[];
+}
 
-const ExperienceEntry: React.FC<experienceDatum[]> = (cvExperience) => (
-    <div>
+const ExperienceRows: React.FC<ExperienceEntryProps> = ({ cvExperience }) => {
+    const withHeader = [{
+        company: "Company",
+        jobTitle: "Job Title",
+        location: "Location",
+        tenure: "Tenure",
+        skills: ["Skills"],
+        achievements: ["Achievements"]
+    } as experienceDatum].concat(cvExperience)
 
+    return (
+        <div className="">
+            {withHeader.map((experience, index) => (
+                <div key={index} className={`grid grid-cols-11 gap-4 p-4 
+                    ${index === 0 ? "text-2xl text-orange-400 font-bold" : "text-xl"}
+                    ${index % 2 === 0 ? "bg-slate-950" : "bg-slate-900"}
+                `}>
+                    <div className="font-bold">{experience.company}</div>
+                    <div>{experience.jobTitle}</div>
+                    <div>{experience.location}</div>
+                    <div>{experience.tenure}</div>
+                    <div className="col-span-2 italic">{experience.skills.join(', ')}</div>
+                    <div className="col-span-5">
+                        <ul>
+                            {experience.achievements.map((achievement, idx) => (
+                                <li className="pb-2" key={idx}>{`${index === 0 ? "" : "- "}${achievement}`}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+}
 
-    </div>)
-
-export default () =>
-(<div id="experience" className="p-6">
-    <h1 className="text-2xl font-bold text-orange-500">Work Experience</h1>
-
-</div>
+export default () => (
+    <div className="mt-12"><ExperienceRows cvExperience={cvExperience} /></div>
 )
 
