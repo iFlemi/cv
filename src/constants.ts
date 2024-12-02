@@ -9,18 +9,30 @@ export interface experienceDatum {
 
 export const cvExperience: experienceDatum[] = [
     {
+        company: "Fauve Ltd.",
+        jobTitle: "Software Engineer",
+        location: "Auckland",
+        tenure: "March 2023 - Present",
+        skills: [ "Typescript, NodeJS, AWS: Lambda, DynamoDB, EventBridge, CloudWatch"],
+        achievements: [
+            "Developed Jurisdiction and Timezone API to enable accurate pricing and scheduling across different global regions, solving complex multi-timezone business logic for rating services",
+            "Implemented flexible REST API for managing country, region, and timezone resources (to lcc-3166 / IANA standards)  with robust event handling",
+            "Supported custom temporal expression DSL for precisely defining time-related events",
+            "Enabled real-time electricity market pricing across New Zealand and Australia by creating a scalable data integration service",
+            "Implemented a dead-letter service for failed events, ensuring data integrity and providing robust error recovery mechanisms in a distributed system architecture"
+        ]
+    },
+    {
         company: "Kernel Wealth",
         jobTitle: "Software Engineer",
         location: "Auckland",
-        tenure: "April 2023 - Present",
+        tenure: "April 2023 - March 2023",
         skills: ["C#", "F#", "PostgreSQL", "AWS: Lambda", "CodePipeline", "DynamoDB", "Git", "Aurora", "Cognito", "CloudFormation", "WAF", "SNS", "SQS", "EventBridge"],
         achievements: [
-            "Created an Annual Confirmation feature, ensuring reliable chained updates to DynamoDB tables, a PostgreSQL table, and multiple highly-coupled 3rd party endpoints.",
-            "Resolved a longstanding issue by enabling the creation and control of child accounts from a parent account, overcoming authentication challenges posed by a 3rd-party system. Additionally, leveraged this to facilitate account impersonation for Customer Service Representatives.",
-            "Created an audit service from scratch to log all account activity.",
-            "Conducted training sessions on functional programming for team members, successfully converting common non-functional patterns in the code base.",
-            "Reworked Authorisation across the entire application.",
-            "Protected internal tooling with AWS WAF, accounting for overseas staff and WFH usage."
+           "Enabled reliable multi-system updates for annual account confirmations, eliminating manual reconciliation and reducing operational risk.",
+           "Resolved a longstanding issue by enabling the creation and control of child accounts from a parent account, overcoming authentication challenges posed by a 3rd-party system. Additionally, leveraged this to facilitate account impersonation for Customer Service Representatives.",
+           "Provided comprehensive account activity tracking, supporting compliance and internal audit requirements",
+           "Improved team's code quality and maintainability by shifting to functional programming patterns"
         ]
     },
     {
@@ -31,12 +43,9 @@ export const cvExperience: experienceDatum[] = [
         skills: ["JS", "React", "Github Actions", "Microservices", "MSSQL", "C#", "CouchDB"],
         achievements: [
             "Part of a team of 4 devs converting old Angular frontend to a new React one to a hard deadline.",
-            "Implemented, trained-on and enforced unit testing, taking the project from 0 to 50% test coverage in 4 months.",
+            "Increased software reliability by establishing rigorous unit testing.",
             "Lead initiative to standardise code-quality across teams.",
-            "Decoupled microservices from each other and the ageing monolith.",
-            "Removed use of hard-to-maintain patterns (Redux/C# dynamic/JObject types) in new projects.",
-            "Migrated inefficient TeamCity build pipeline to GitHub actions as a step towards CI/CD.",
-            "Assisted on new microservice architecture decisions.",
+            "Simplified system architecture by decoupling microservices, enabling more agile and responsive software development",
             "2nd highest score in division (of around 150 devs) for the annual code security assessment."
         ]
     },
@@ -49,10 +58,9 @@ export const cvExperience: experienceDatum[] = [
         achievements: [
             "Created new features from UI mockups in a complex enterprise code-base.",
             "Worked with teams across Engineering to facilitate the fortnightly release of minor versions.",
-            "Owned created features, including presentation to stakeholders and being on call to support them in 4 global production environments.",
+            "Reduced time-to-market for new features through direct stakeholder collaboration.",
             "Engaged in all aspects of feature development, from planning to support.",
-            "Worked with a diverse product from custom hardware to hybrid cloud/legacy infrastructure.",
-            "Assisted in breaking down legacy monolithic architectures into microservices. Pioneering the first CI/CD microservice, laying the foundation for all future microservices."
+            "Enabled faster, more reliable software releases by introducing first CI/CD microservice in our vertical, reducing deployment complexity."
         ]
     },
     {
@@ -62,12 +70,9 @@ export const cvExperience: experienceDatum[] = [
         tenure: "March 2019 - October 2019",
         skills: ["C#", ".NET Core", "ASP MVC", "SQL", "HTML5/CSS", "Bootstrap", "Windows Forms", "Azure Cloud", "Swagger", "iText"],
         achievements: [
-            "Implemented new EU/US courier integrations for DHL EU/DHL US, RoyalMail UK/DPD.",
-            "Owned design, specification and implementation of additions to a large existing product.",
-            "Managed Production CI/CD with same day production release hotfix commitments.",
-            "Created a centralised tool repository and development guidelines.",
-            "Delivered code to strict deadlines working with legacy code restrictions.",
-            "Created pdf creation tools to fill the need for centralised pdf generation."
+            "Expanded international shipping capabilities by integrating multiple courier services, directly supporting business growth.",
+            "Standardized development practices to improve team efficiency and code consistency.",
+            "Maintained rapid feature delivery while managing legacy system constraints."
         ]
     },
     {
@@ -78,11 +83,8 @@ export const cvExperience: experienceDatum[] = [
         skills: ["C#", ".NET Core", "ASP MVC", "SQL", "JavaScript", "Node.js", "JQuery", "HTML5/CSS", "Bootstrap 3/4", "AWS (AppStream, DynamoDB, VPC, API Gateway, EC2, EMR, SQS, Lambda, Alexa, Cloudwatch)", "Google Assistant", "SignalR", "Windows Forms", "SSL VPN", "Windows Server", "DNS", "Git"],
         achievements: [
             "Lead design of custom software from scratch, creating/adapting specifications with clients.",
-            "Consulted on project costing, back-end services, front-end design & hosting requirements.",
-            "Saved ~70% of a client's monthly AWS bill (~$5000 to ~$1500) through AWS service restructure.",
-            "Autonomous self-management from implementation to finished product on projects.",
-            "Rebuilt GPS tracking system from device byte level, TCP server, web interface to reporting system in .NET, JS/HTML/CSS using SQS and DynamoDB. Worked TCP level load balancing into the environment to optimise complexity/costs and increase scalability.",
-            "Identified and fixed SQL injection vulnerabilities in existing code base.",
+            "Saved ≈70% of a client’s monthly AWS bill (≈$5000 ➝ ≈$1500) through AWS service restructure.",
+            "Created scaling GPS fleet tracking and reporting systems",
             "Created a voice-control system for Google Home/Alexa for spa pool controllers."
         ]
     },
