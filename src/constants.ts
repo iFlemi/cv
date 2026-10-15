@@ -15,7 +15,8 @@ export const cvExperience: experienceDatum[] = [
         tenure: "June 2025 - Present",
         skills: [ "React (Typescript), C#, NodeJS, Azure Dev Ops (ServiceBus/Function App/Web App/Fabric), MSSQL, Grafana"],
         achievements: [
-            "Built a service supporting the company’s move to Market-wide Half-Hourly Settlement (MHHS), the industry-wide shift to half-hourly meter readings. Joined the four-year programme in its final two months before launch.",
+            "Designed and built a service supporting the company's move to Market-wide Half-Hourly Settlement (MHHS), the industry-wide shift to half-hourly meter readings. Joined the four-year programme in its final three months before launch.",
+            "Presentation of the MHHS service to the wider team with a clear strategy for extension and maintenance. Collaborated with the team to make adjustments and account for future expansion.",
             "Implemented a Grafana dashboard and robust logging for the MHHS service, enabling the team to diagnose production and launch issues within minutes and ship fixes through CI/CD in under an hour.",
             "Built the UI for a customer-facing reporting tool in React and TypeScript on a Microsoft Fabric data source, delivered well ahead of the project deadline.",
             "Exploring controlled and careful agentic AI implementation techniques, using a user-need-driven, agile approach to design rather than unstructured \"vibe coding\"."
