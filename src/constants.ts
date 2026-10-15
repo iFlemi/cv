@@ -26,7 +26,7 @@ export const cvExperience: experienceDatum[] = [
         company: "Fauve Ltd.",
         jobTitle: "Software Engineer",
         location: "Auckland",
-        tenure: "March 2024 - May 2025",
+        tenure: "March 2024 - Feb 2025",
         skills: [ "Typescript, NodeJS, AWS: Lambda, DynamoDB, EventBridge, CloudWatch"],
         achievements: [
             "Developed Jurisdiction and Timezone API to enable accurate pricing and scheduling across different global regions, solving complex multi-timezone business logic for rating services",
@@ -40,7 +40,7 @@ export const cvExperience: experienceDatum[] = [
         company: "Kernel Wealth",
         jobTitle: "Software Engineer",
         location: "Auckland",
-        tenure: "April 2023 - Jan 2024",
+        tenure: "April 2023 - March 2024",
         skills: ["C#", "F#", "PostgreSQL", "AWS: Lambda", "CodePipeline", "DynamoDB", "Git", "Aurora", "Cognito", "CloudFormation", "WAF", "SNS", "SQS", "EventBridge"],
         achievements: [
            "Enabled reliable multi-system updates for annual account confirmations, eliminating manual reconciliation and reducing operational risk.",
