@@ -73,6 +73,7 @@ const NavLinks: React.FC<NavLinksProps> = ({
                     onClick={() => setToggled(!toggled)}
                 >
                     {isMobile && (<img
+                        alt="Me"
                         className={roundedIconClass}
                         src={imgsrc} />)}
                     <span className="pl-6">{name}</span>

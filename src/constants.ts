@@ -9,10 +9,23 @@ export interface experienceDatum {
 
 export const cvExperience: experienceDatum[] = [
     {
+        company: "Smartest Energy Ltd.",
+        jobTitle: "Software Engineer",
+        location: "London",
+        tenure: "June 2025 - Present",
+        skills: [ "React (Typescript), C#, NodeJS, Azure Dev Ops (ServiceBus/Function App/Web App/Fabric), MSSQL, Grafana"],
+        achievements: [
+            "Built a service supporting the company’s move to Market-wide Half-Hourly Settlement (MHHS), the industry-wide shift to half-hourly meter readings. Joined the four-year programme in its final two months before launch.",
+            "Implemented a Grafana dashboard and robust logging for the MHHS service, enabling the team to diagnose production and launch issues within minutes and ship fixes through CI/CD in under an hour.",
+            "Built the UI for a customer-facing reporting tool in React and TypeScript on a Microsoft Fabric data source, delivered well ahead of the project deadline.",
+            "Exploring controlled and careful agentic AI implementation techniques, using a user-need-driven, agile approach to design rather than unstructured \"vibe coding\"."
+        ]
+    },
+    {
         company: "Fauve Ltd.",
         jobTitle: "Software Engineer",
         location: "Auckland",
-        tenure: "March 2023 - Present",
+        tenure: "March 2024 - May 2025",
         skills: [ "Typescript, NodeJS, AWS: Lambda, DynamoDB, EventBridge, CloudWatch"],
         achievements: [
             "Developed Jurisdiction and Timezone API to enable accurate pricing and scheduling across different global regions, solving complex multi-timezone business logic for rating services",
@@ -26,7 +39,7 @@ export const cvExperience: experienceDatum[] = [
         company: "Kernel Wealth",
         jobTitle: "Software Engineer",
         location: "Auckland",
-        tenure: "April 2023 - March 2023",
+        tenure: "April 2023 - Jan 2024",
         skills: ["C#", "F#", "PostgreSQL", "AWS: Lambda", "CodePipeline", "DynamoDB", "Git", "Aurora", "Cognito", "CloudFormation", "WAF", "SNS", "SQS", "EventBridge"],
         achievements: [
            "Enabled reliable multi-system updates for annual account confirmations, eliminating manual reconciliation and reducing operational risk.",
